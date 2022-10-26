@@ -9,11 +9,13 @@ public class OperatorEx08 {
 			System.out.print("정수를 입력하세요 : ");
 			int num1=sc.nextInt();
 			
-			
+			// boolean isEven =num1 % 2 =0
+			// String result  = isEven ? "짝수" : "홀수" ;
 			String result = num1 %2==0 ? "짝수" : "홀수" ;
 			
 		
-			System.out.println(num1+"4"+result+"입니다.");
+			System.out.println(num1+"는"+result+"입니다.");
 		
+			sc.close();
 		}
 }
