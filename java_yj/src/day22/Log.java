@@ -10,12 +10,10 @@ public class Log {
 	private ArrayList<StudentLog> slogs = new ArrayList<StudentLog>();
 	
 		//날짜 ,학생일지들(이름, 생년월일 출결)
-	public Log(ArrayList<Student> stds, String date) {
+	public Log(ArrayList<StudentLog> stdLogs, String date) {
 		this.date = date;
-		for(Student std : stds) {
-			StudentLog slog = new StudentLog(std,null);
-			slogs.add(slog);
-		}
+		this.slogs = stdLogs; //원래는깊은 복사를 해야하는데 간단하게 얕은 복사를 이용 
+		
 	}
 	
 

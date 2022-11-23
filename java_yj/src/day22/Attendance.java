@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class Attendance {
 
-	ArrayList<Student> stds = new ArrayList<Student>();
-	ArrayList<Log> logs = new ArrayList<Log>();
+	private ArrayList<Student> stds = new ArrayList<Student>();
+	private ArrayList<Log> logs = new ArrayList<Log>();
 	
 	
 }
