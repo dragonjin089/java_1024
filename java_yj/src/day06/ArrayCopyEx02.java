@@ -7,7 +7,8 @@ public class ArrayCopyEx02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int arr1[] = new int[1,2,3];
+//		int arr1[] = new int[1,2,3];
+		int arr1[] = new int[] {1,2,3};
 		int arr2[];
 		
 		int tmpArr[] = new int [arr1.length];

@@ -54,7 +54,7 @@ public class ArrayRandomEx01 {
 //강사님코드
 		boolean isDuplicated = false; // 변수 중복
 		// 중복이 안됨으로 초기화 
-		for(int i=0; i<arr.length; i++)
+		for( i=0; i<arr.length; i++)
 		{
 			//i번지에 있는 값과 같으면 num가 같으면 
 			if(arr[i]==num) {
