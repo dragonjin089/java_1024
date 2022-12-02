@@ -300,7 +300,7 @@ public class BoardMain {
 				System.out.println("등록된 댓글이 없습니다.");
 				return;
 			}
-			int count = 0;
+			
 			
 			commentList.forEach(c->{
 				if(c.getBoardNum() == boardNum) {
