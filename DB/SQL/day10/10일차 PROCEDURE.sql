@@ -1,0 +1,43 @@
+-- 프로시져 
+/*
+delimiter $$ 문장의 끝
+DECLARE 변수 선언 
+
+문법 
+DELIMTTER $$
+create procedure 스토어드 프로시져 이름9) 
+BEGIN 
+	-- 이곳에 SQL 프로그래밍 코딩 
+END $$
+DELIMITER ; 
+CALL 스토어드 프로시져 이름();
+
+*/
+
+DROP PROCEDURE IF EXISTS TEST1;
+DELIMITER // 
+CREATE PROCEDURE TEST1() 
+BEGIN 
+	SHOW DATABASES;
+END // 
+DELIMITER ;
+
+CALL TEST1(); -- SHOW DATABASE 실행한 결과 보여줌 
+
+DROP PROCEDURE IF EXISTS TEST2;
+DELIMITER // 
+CREATE PROCEDURE TEST2(
+	IN NUM INT,
+    OUT OUT_NUM INT 
+) 
+BEGIN 
+SELECT NUM;
+SET OUT_NUM = NUM; -- 변수의 값을 넣을 땐 SET 을 붙여야함
+END // 
+DELIMITER ;
+
+SET @T_NUM = 0;
+CALL TEST2(2, @T_NUM);
+SELECT @T_NUM;
+
+ 
