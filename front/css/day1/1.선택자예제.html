@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{color:red;	}
+		div{background-color: aquamarine;}
+		/* 태그선택자 */
+		#name{font-weight: bold;} 
+		/* 아이디선택자 */
+		.bar{text-decoration: none;}
+		/* 클래스선택자 */
+		body div{}
+		/* 후손선택자 공백 */
+		body>div{}
+		/* 자손선택자 꺽새 */
+		input[type=text]{}
+		/* 속성선택자 */
+		div+p{}
+		/* 동위선택자 */
+	</style>
+</head>
+<body>
+	<div>안녕</div>
+	<p id="name">내 이름은 홍길동</p>
+	<a href="http:www.naver.com" class="bar">네이버</a>
+	<div class="box"></div>
+	<div id="box"></div>
+</body>
+</html>
