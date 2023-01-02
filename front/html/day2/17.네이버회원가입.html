@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- required 필수 항목  -->
+  <form action="" method="post">
+
+    <h1>naver</h1><br>
+    <div>
+      아이디<br>
+      <input type="text" name="id" required>
+    </div>
+    <div>
+      비밀번호<br>
+      <input type="password" name="pw" required>
+    </div>
+    <div>
+      비밀번호 재확인<br>
+      <input type="password" name="pw" required>
+    </div>
+    <div>
+      이름<br>
+      <input type="name" required>
+    </div>
+    <div>
+      생년월일<br>
+      <input type="text" name="year">
+      <select name="month">
+        <option value="0">월</option>
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+      </select>
+
+      <input type="text" name="day" placeholder="일"> <br>
+
+    </div>
+
+
+
+    <div>
+      <!-- slelect -->
+      성별<br>
+     <select name="gender" id="">
+      <option value="">남성</option>
+      <option value="">여성</option>
+      <option value="">선택안함</option>
+     </select>
+    </div>
+
+    <div>
+      <!-- 데이터리스트 -->
+      본인확인이메일<br>
+      <input type="email" name="email">
+    </div>
+
+    <div>휴대전화
+    <select name="phone" id="">
+      <option value="82">대한민국 +82</option>
+      <option value="233">가나 +233</option>
+    </select>
+    <input type="text" name="phone" placeholder="전화번호 입력">
+    <button type="button ">인증번호 받기 </button>
+    <input type="text" placeholder="인증번호 입력하세요." readonly>
+
+    <button type="submit"> 가입하기</button>
+    </div>
+
+
+
+
+
+  </form>
+
+  
+</body>
+</html>
