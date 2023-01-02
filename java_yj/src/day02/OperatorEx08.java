@@ -17,5 +17,6 @@ public class OperatorEx08 {
 			System.out.println(num1+"는"+result+"입니다.");
 		
 			sc.close();
+		
 		}
 }

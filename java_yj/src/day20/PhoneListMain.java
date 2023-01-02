@@ -45,7 +45,7 @@ public class PhoneListMain {
 
 		String	name ,company;
 		int pNumber;
-		
+		int count = 0;
 		switch(menu) {
 		
 		case 1 :
@@ -60,11 +60,12 @@ public class PhoneListMain {
 			
 
 		case 2 : 
-			int count = 0;
+			
 			
 			System.out.println("이름 검색");
 			scan.nextLine();
 			name= scan.next();
+		
 			
 			for(Phone tmp : list) {
 				if(tmp.getName().contains(name.trim())) {
@@ -76,32 +77,58 @@ public class PhoneListMain {
 			if(count ==0) {
 				System.out.println("검색결과 없음 ");
 			}
-		
 			
-			System.out.println("1. 성, 이름 수정");
-			System.out.println("2. 기존 등록된 전화 번호 수정");
-			System.out.println("3. 새 전화번호를 등록");
-//			switch (/*검색된 사람들중에 선택*/)
-//			{
-//			case 1: 
-//				System.out.println("성 이름 수정");
-//			break;
-//			case 2: 
-//				System.out.println("기존 등록된 전화번호 수정");
-//			break;
-//			case 1: 
-//				System.out.println("새 전화번호 등록");
-//			break;
-//			
-//			}
+			printSubMenu();
+			
+			
+			int subMenu = scan.nextInt();
+			
+			runSubPrintMenu(subMenu,list);
+			
+			
 			
 			break;
 		case 3 : 
-			System.out.println("전화번호 삭 제");
 			
+			System.out.println("전화번호 조회");
+			System.out.println("이름 검색");
+			scan.nextLine();
+			name= scan.next();
+		
+			
+			for(Phone tmp : list) {
+				if(tmp.getName().contains(name.trim())) {
+					System.out.println(tmp);
+					count++;
+				}
+			}
+			
+			if(count ==0) {
+				System.out.println("검색결과 없음 ");
+			}
 			break;
 		case 4 : 
-			System.out.println("전화번호 조 회");
+			System.out.println("전화번호 삭제");
+			System.out.println("이름 검색");
+			scan.nextLine();
+			name= scan.next();
+		
+			
+			for(Phone tmp : list) {
+				if(tmp.getName().contains(name.trim())) {
+					System.out.println(tmp);
+					count++;
+				}
+			}
+			
+			if(count ==0) {
+				System.out.println("검색결과 없음 ");
+			}
+			System.out.println("삭제할 전화번호 입력 ");
+			pNumber = scan.nextInt();
+			if(list.remove(new phone(pNumber))) {
+				
+			}
 			break;
 		case 5: 
 			System.out.println("종료");
@@ -112,6 +139,34 @@ public class PhoneListMain {
 		}
 		
 	}
+	private static void runSubPrintMenu(int subMenu, ArrayList<Phone> list) {
+		
+		switch (subMenu)
+		{
+		
+		case 1: 
+			System.out.println("성 이름 수정");
+		break;
+		case 2: 
+			System.out.println("기존 등록된 전화번호 수정");
+		break;
+		case 3: 
+			System.out.println("새 전화번호 등록");
+		break;
+		
+		}
+		
+		
+	}
+
+
+	private static void printSubMenu() {
+		System.out.println("1. 성, 이름 수정");
+		System.out.println("2. 기존 등록된 전화 번호 수정");
+		System.out.println("3. 새 전화번호를 등록");
+	}
+
+
 	private static Phone createPhone() {
 		String name,company;
 		int pNumber;

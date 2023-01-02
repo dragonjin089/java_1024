@@ -9,7 +9,7 @@ public class Score2 {
 	private String title;
 	private int term, midScore, finalScore, performace;
 	private double total;
-	
+	private double midRate = 0.4, finalRate = 0.5 , performaceRate = 0.1; //비율에 맞게 
 	
 	// 메소드 : equals() : 성적 추가 시 활용, toString() 성적 출력 시  활용 
 	// getter, setter 
@@ -28,7 +28,7 @@ public class Score2 {
 		this.midScore = midScore;
 		this.finalScore = finalScore;
 		this.performace = performace;
-		
+		this.total = midRate*midScore + finalScore*finalRate+ performace*performaceRate;
 	}
 	
 	//       : 과목 학기가 필요한 생성자 (성적이 같은지 확인할 때 ) 

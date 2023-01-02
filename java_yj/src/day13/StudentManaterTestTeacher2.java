@@ -30,7 +30,8 @@ public class StudentManaterTestTeacher2 {
 
 	private static int runMenu(int menu, Student[] stds, int count) {
 		Scanner scan = new Scanner(System.in);
-		if(menu == 1) {
+		switch(menu) {
+		case 1:
 			if(addStudent(stds,count)) {
 				System.out.println("학생을추가했습니다 ");
 				count++;
@@ -38,34 +39,26 @@ public class StudentManaterTestTeacher2 {
 			}else {
 				System.out.println("학생을 추가하지 못했습니다.");
 			}
-		
-		}
-		else if(menu ==2) {
-			
+			break;
+		case 2: 
 			if(addScore(stds, count)) {
 				System.out.println("성적이 등록됐습니다.");
 			}
 			else {
 				System.out.println("성적 등록에 실패했습니다.1");
 			}
-			
-		}
-		
-		
-		else if(menu ==3) {
+			break;
+		case 3: 
 			//학생정보출력
 			//저장된 학생 정보를 출력
 			printStudentList(stds,count);
-			System.out.println("3. 학생정보출력 기능 구현 에정");			
-			
-		}
-		else if(menu ==4) {
-			System.out.println("프로그램 종료 ");			
-		}
-		else{
+			break;
+		case 4: 
+			System.out.println("프로그램 종료 ");		
+			break;
+		default: 
 			System.out.println("잘못된번호");
 		}
-		
 		return count;
 	}
 

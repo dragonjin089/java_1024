@@ -21,4 +21,8 @@ public Student(Student std)
 	this.birthday = std.birthday;
 	}
 
+public Student(String name, int grade, int classNum, int num) {
+	
+}
+
 }

@@ -10,6 +10,8 @@ public class InheritanceEx02 {
 		for(int i =0; i<=30 ; i++) {
 			kcar.accle();
 		}
+		// 자동차 상태확인 
+		kcar.print();
 		for(int i =0; i<=30 ; i++) {
 			kcar.breaker();
 		}
@@ -25,7 +27,10 @@ public class InheritanceEx02 {
 		for(int i =0; i<=30 ; i++) {
 			hcar.accle();
 		}
-		for(int i =0; i<=30 ; i++) {
+		// 자동차 상태확인
+		hcar.print();
+		
+		for (int i =0; i<=30 ; i++) {
 			hcar.breaker();
 		}
 		hcar.changeGear('p');
@@ -78,10 +83,10 @@ class Car {
 	public String carNum;
 	public boolean power;
 	public int speed;
-	public String company;
 	public char gear;
+	public String company;
 	
-	public Car(int tireCount, String type, int color, String carNum, char gear, String company) {
+	public Car(int tireCount, String type, int color, String carNum, String company) {
 
 		this.tireCount = tireCount <= 0? 4 : tireCount;
 		this.type = type;
@@ -137,7 +142,7 @@ class KiaCar extends Car{
 class HyundaiCar extends Car{
 
 	public HyundaiCar(int tireCount, String type, int color, String carNum) {
-		super(tireCount, type, color, carNum,"현대");
+		super(tireCount, type, color, carNum, "현대");
 		// TODO Auto-generated constructor stub
 		}
 		public void auto() {

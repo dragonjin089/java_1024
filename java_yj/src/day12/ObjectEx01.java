@@ -11,7 +11,7 @@ public class ObjectEx01 {
 		System.out.println(std2);
 			
 		System.out.println("두개의 == 비교 : "+ (std1 == std2));
-		System.out.println("두개의 equlas() 비교 : "+ (std1.equals(std2));
+		System.out.println("두개의 equlas() 비교 : "+ (std1.equals(std2)));
 	}
 
 

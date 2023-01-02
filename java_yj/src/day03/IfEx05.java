@@ -12,7 +12,7 @@ public class IfEx05 {
 		 * 단 6의 배수는 6의 배수라고만출력
 		 * 
 		 * */
-		int num =9;
+		int num =18;
 		
 		if (num%6 ==0 ) {
 			System.out.println(num + "는 6의 배수");

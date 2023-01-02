@@ -69,6 +69,8 @@ public class StudentManaterTestTeacher2 {
 		}
 		
 	}
+	
+	
 
 	private static boolean addScore(ArrayList<Student> stds) {
 		
@@ -137,6 +139,7 @@ public class StudentManaterTestTeacher2 {
 		System.out.println("4. 종료 ");
 		System.out.println("----------------");
 		System.out.print("메뉴선택 : ");
+		
 	}
 	
 	

@@ -61,25 +61,56 @@ public class StudentManaterTestTeacher {
 		
 		if(menu == 1) {
 			//학생정보추가
-			
+			System.out.println("1.학생 정보 추가 기능 구현 예정");
 			//학생정보 입력(학년 ,반 , 번호 ,이름)
-			int grade = scan.nextInt();
+			System.out.println("추가할 학생 정보 입력");
+			System.out.print("학년 : ");
+			int grade = scan.nextInt();			
+			System.out.print("반 : ");
 			int classNum = scan.nextInt();
+			System.out.print("번호 : ");
 			int num = scan.nextInt();
-			String name = scan.nextLine();
-			
+			System.out.print("이름 : ");
+			// nextLine 말고 next 를 써야함 단어만 입력받음
+			String name = scan.next(); 
+			System.out.println(grade + "학년 "+classNum + "반" + num + "번호" + "이름 " + name);			
 			
 			//입력한 학생 정보가 없으면 추가 
+			//학생 정보들 중에서 하나씩 비교하여 학년, 반, 번호가 같은 학생이 있는지 확인해서 
+			//없으면 마지막 학생 뒤에 추가
+			
 			System.out.println("1. 학생정보 추가 기능 구현 에정");			
 		}
 		else if(menu ==2) {
 			//학생성적추가
-			// 학생 정보를 입력(학년, 반, 번호) 
+			// 학생 정보를 입력(학년, 반, 번호)
+			System.out.println("2. 학생 성적 추가 기능 구현 예정");
+			//학생정보 입력(학년 ,반 , 번호 ,이름)
+			System.out.println("성적을 추가할 학생 정보 입력");
+			System.out.print("학년 : ");
+			int grade = scan.nextInt();			
+			System.out.print("반 : ");
+			int classNum = scan.nextInt();
+			System.out.print("번호 : ");
+			int num = scan.nextInt();
 			// 입력한 학생 정보가 없으면 끝 
-	
+			// 학생 정보들 중에서 하나씩 비교하여 학년, 반,번호가 같은학생이 있는지 확인해
+			// 없으면 조건문 종료
+			
 			// 성적정보를 입력(과목, 학기 ,중간, 기말 ,수행평가)
+			System.out.println("성적정보를 입력하세요");
+			System.out.println("과목 : ");
+			String title = scan.next();
+			System.out.println("학기 : ");
+			int term = scan.nextInt();
+			System.out.println("중간 : ");
+			int midScore = scan.nextInt();
+			System.out.println("기말 : ");
+			int finalScore = scan.nextInt();
+			System.out.println("수행평가 : ");
+			int performace = scan.nextInt();
 			// 입력한 성적 정보가 없으면 추가 
-			System.out.println("2. 학생정보수정 기능 구현 예정 ");			
+			// 선택한 학생의 성적 정보들 중에서 과목, 학기가 같은 성적 정보가 없으면 추가 
 		}
 		else if(menu ==3) {
 			//학생정보출력
@@ -94,12 +125,5 @@ public class StudentManaterTestTeacher {
 			System.out.println("잘못된번호");
 		}
 		}
-		
-			
-			
-		
-			
-		
-	
 	}
 }

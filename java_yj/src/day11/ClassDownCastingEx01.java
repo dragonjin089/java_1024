@@ -6,8 +6,8 @@ public class ClassDownCastingEx01 {
 		// TODO Auto-generated method stub
 		/* 클래스 다운 캐스팅은 조건부로 가능
 		 * 안되는 경우 : 부모클래스의 객체를 바로 자식클래스의 객체에 저장하는 경우*/
-//		KiaCar kcar = (KiaCar)(new Car(4,"k5",0x00ff00,"123가1234","기아"));
-//		kcar.print();
+		//		KiaCar kcar = (KiaCar)(new Car(4,"k5",0x00ff00,"123가1234","기아"));
+		//		kcar.print();
 		/* 되는 경우 : 자식클래스의 객체를 부모 클래스의 객체에 저장한 후 
 		 * 다시 자식 클랫의 객체로 저장하는경우 
 		 * 

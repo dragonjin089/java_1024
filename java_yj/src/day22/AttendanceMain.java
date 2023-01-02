@@ -152,6 +152,7 @@ public class AttendanceMain {
 			printStr("학생 정보 추가 하지 못했습니다.");
 			return;
 		}
+	
 		
 		stds.add(std);
 		printStr("학생 정보 추가 했습니다.");

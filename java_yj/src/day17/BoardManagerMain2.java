@@ -23,7 +23,6 @@ public class BoardManagerMain2 {
 		 * */
 		Scanner scan = new Scanner(System.in);
 	
-		
 		int menu = 0;
 		ArrayList<Board> list = new ArrayList<Board>();
 		do {

@@ -73,17 +73,42 @@ public class BaseballManager {
 			switch(menu) 
 			{
 			case 1: 
-				int [] com = BaseballGame.createRandomArray(1, 9, 3);
-				
+				 
+				 // => createRandomArray
+					int min = 1, max = 9, size = 3;
+					int []com = createRandomArray(min, max, size);
+					printArray(com);
+					
+					Scanner scan = new Scanner(System.in);
+					
+					int strike = 0, ball;
+					do {
+						//2.사용자가 숫자를 선택
+						System.out.print("입력 : ");
+						int []user = scanArray(scan, size);
+						
+						//3.판별
+						// => 스트라이크를 판별하는 기능을 구현 
+						// => countLotto를 이용하여 일치하는 개수 - 스트라이크 개수 => 볼의 개수
+						strike = getStrike(com, user);
+						ball = getBall(com, user);
+						
+						printGame(strike, ball);
+						//2~3을 반복(3S가 될때까지)
+					}while(strike < 3);
+					System.out.println("게임 종료.");
+					scan.close();
+				}
 				
 			case 2: 
 				// 기록확인 등록된 5위까지 
 				for(int i = 0; i<count; i++)
 				{
-					[i].printGame();
+					BaseballGame[i].printGame();
 				}
 				break;
 			case 3: 
+				
 				System.out.println("프로그램을 종료합니다.!");
 				break;
 				

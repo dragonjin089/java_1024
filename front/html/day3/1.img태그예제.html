@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<!-- data : image = jpe64  문자열
+width : 가로 height : 높이 
+- 기본 픽셀단위
+- auto : 비율에 맞는 크기를 조절, 보통 가로 또는 세로 하나만 지정 한 후 
+ 다른 속성에 auto를 추가하여 이미지 비율이 깨지지 않게함
+-->
+<body>
+	<input width = "300" height="300" type="image" src="https://t1.daumcdn.net/cfile/tistory/999D293D5CA3895E2E"	alt="벚꽃"> <br>
+	<!-- 절대경로 : 최상위 폴더를 기준으로 경로를 탐색
+		- root 폴더(최상위 폴더) : html폴더
+		- /로시작 
+		- 최상위 폴더가 바뀌면 문제가 된다.
+	 -->
+	<input width = "300" height="300"type="image" src="/image/벚꽃.jpg" alt="벚꽃">
+	<!-- 상대 경로 : 현재 파일 위치를 기준으로 탐색  
+		-최상위 폴더가 바뀌어도 문제가 안됨
+		-../ : 상위 폴더로 이동 
+		-./ : 현재폴더 
+	-->
+	 <input width = "300" height="300" type="image" src="../image/벚꽃.jpg" alt="">
+
+	 <img src="../image/벚꽃.jpg" alt="벚꽃">
+</body>
+</html>

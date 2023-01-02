@@ -13,7 +13,7 @@ public class ConSumerEx01 {
 		list.add(new Student(1, 2, 1 ,"김길동"));
 		list.add(new Student(1, 1, 2, "고길동"));
 		
-		pritn(list, (a) -> System.out.println(a));
+		print(list, (a) -> System.out.println(a));
 		
 		print(list, (a)-> {
 			System.out.println("학년 : "+a.getGrade());
