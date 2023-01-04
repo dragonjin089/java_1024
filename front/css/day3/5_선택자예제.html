@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+<style>
+
+	.box{
+width: 100px; height: 100px; background: yellow;
+top:500px;
+	}
+	.box:hover{
+		background: green;
+	}
+	.container-box{
+		padding: 20px; background: blue;
+	}
+	.inner-box{
+		padding: 20px; background: gray;
+	}
+	.container-box:hover{background: black;}
+	.inner-box:hover{background: red;
+	}
+
+	input:focus{
+		background:red;
+	}
+
+input:checked{
+	width:50px;
+}
+input:checked+label{
+	background: yellow;
+}
+input:not(:checked){
+	background:green;
+}
+input:not([type=checkbox]){
+	background-color: green;
+}
+/* 인풋태그에 체크드가 아닌것을 배경을 녹색  */
+</style>
+
+</head>
+<body>
+	<div class="box"></div>
+	<div class="container-box">
+		<div class="inner-box">
+			<div class="box"></div>
+		</div>
+	</div>
+
+	<input type="text" id="text">
+	<input type="checkbox"id="apple">
+	<label for="apple">사과</label>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+.container-box{
+	border: 1px solid black;
+}
+.container-box::after{
+				content: ''; clear: both; display: block;
+			}
+.box{
+	height:50px; width:12.5% ; float: left;
+}
+.box1{
+ background-color: red;
+}
+.box2{
+	background-color: orange;
+}
+.box3{
+	background: yellow;
+}
+.box4{
+	background: green;
+}
+.box5{
+	background:skyblue;
+}
+.box6{
+	background: darkblue; 
+}
+.box7{
+	background-color: purple;
+}
+.box8{
+	background: darkmagenta;
+}
+
+		</style>
+	</title>
+</head>
+<body>
+	<div class="container-box">
+		<div class="box box1">메일</div>
+		<div class="box box2">카페</div>
+		<div class="box box3">블로그</div>
+		<div class="box box4">지식</div>
+		<div class="box box5">쇼핑</div>
+		<div class="box box6">쇼핑라이브</div>
+		<div class="box box7">페이</div>
+		<div class="box box8">네이버티비</div>
+	</div>
+</body>
+</html>

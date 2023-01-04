@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+
+.container-box{border: 1px solid black;}
+
+.box1{height: 100px; width : 33.33%; background-color: red; float: left;}
+.box2{height: 100px; width : 33.33%; background-color: green; float: left;}
+.box3{height: 100px; width : 33.33%; background-color: blue; float: right;}
+
+.container-box::after{
+			clear: both; display: block; content:'';
+		} 
+
+		/* 강사 ver  */
+			.container1-box{
+				border:5px solid red;
+			}
+			.container1-box::after{
+				content: ''; clear: both; display: block;
+			}
+			.box{
+				height: 100px; width: 33.33%; background: yellow;
+				float: left; ;
+			}
+			/* 형제연산자 */
+			.box~.box{border-left : 5px solid red; margin-left: -5px;}
+			.box5{background-color:gray; }
+			.box6{background: blue; }
+
+	</style>
+</head>
+<body>
+<div class="container-box">
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</div>	
+<!--강사ver-->
+<div class="container1-box">
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+</div>	
+</body>
+</html>
