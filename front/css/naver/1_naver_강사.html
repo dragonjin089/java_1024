@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NAVER</title>
+</head>
+<style>
+	*{padding: 0px; margin: 0px;}
+	ul,ol{list-style: none;}
+	a{text-decoration: none;}
+
+	#body{min-width: 1190px;}
+		.inner-container{
+			width: 1130px; margin: 0 auto;  padding: 0 30px;
+			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+			line-height: 16px; font-size: 12px; color: #202020;
+			height: 1000px;
+		}
+		
+
+div{
+	display:block;
+
+} 
+
+
+
+
+	.box-search{
+		position: relative;
+	}
+	.box-search .box-service{
+		/* box-search안 box-service  */
+		position: absolute; right: -3px; top:12px;
+	}
+	.box-search .link-start-page{
+		font-size: 11px; color:#404040; float: left;
+	}
+	.box-search .link-start-page:hover{
+		text-decoration: underline;
+	}
+	.box-search .link-start-page::after{
+		/* inline 크기조절 불가  */
+		content: ''; width: 26px; height:26px; display: inline-block;
+		background-position: -382px -213px;
+		vertical-align: top;
+		margin: -3px 0 0 -3px;
+	}
+	.box-search .link-start-page::after{
+		background-image: url(img/img1.png);
+		background-size: 442px 428px;
+	}
+
+/* icon 이미지 */
+	.img1::after, .ico_jrnaver.img1, .ico_happybin.img1, .ico_submit.img1{
+		background-image: url(img/img1.png);
+		background-size: 442px 428px;
+	}
+	
+
+
+	/* 쥬니버네이버 */
+	.box-search .link-jrnaver{
+		float: left;
+	}
+	.box-search .link-jrnaver .ico_jrnaver{
+		display: inline-block;
+		width:60px; height: 10px;
+		background-position: -264px -296px;
+		background-repeat: no-repeat;
+		/* 글자높이  */
+		/* 한개라서 의미 없음  */
+		vertical-align: top;
+		margin: 3px; 
+		
+	}
+	/* .box-search .link-jrnaver .ico_jrnaver{
+	 background-image: url(img/img1.png);
+	 background-size: 442px 428px;
+ }  */
+
+	.box-search .link-jrnaver .ico_jrnaver:hover{
+		display: inline-block;
+		width: 60px;
+		height: 10px;
+		background-position: -326px -296px;
+		background-repeat: no-repeat;
+		vertical-align: top;
+	}
+
+
+
+.box-search .icon-bar{
+	float: left; width: 1px; height: 1px; margin: 3px 7px;
+	background: #e4e8eb;
+}
+
+
+/* 시각장애인 글자처리  */
+	.blind{
+		position: absolute;
+		width: 1px; height: 1px; margin: -1px; 
+		overflow: hidden;
+	}
+
+/* 해피빈 */
+.box-search .link_happybin{
+	float: left;
+	margin-left: 6px;
+}
+	.box-search .link_happybin .ico_happybin{
+		display: inline-block;
+		width: 34px;
+		height: 11px;
+		background-position: -365px -245px;
+		vertical-align: top;
+		margin: 3px 3px 2px;
+	}
+	/* .box-search .link_happybin .ico_happybin{
+		background-image: url(img/img1.png);
+	 background-size: 442px 428px;
+	}  */
+	
+	.box-search .link_happybin .ico_happybin:hover{
+	
+    background-position: -380px -199px;
+
+	}
+	
+/* 검색창 */
+
+.box-search .search-box{
+	width: 582px; height: 52px;
+	display: block;
+	border: 2px solid #19ce60;
+	border-radius: 2px;
+}
+
+
+.search-box{
+	position: absolute;
+	top: 50%;
+	left: 268px;
+	margin-top: -28px;
+}
+
+.box-search .input-text{
+	width: 442px; height: 24px; padding: 13px 15px; margin : 1px;
+	background-color: #fff; font-size: 18px; line-height: 24px;
+	color: #000; font-weight: bold; outline: 0;
+	border: 0;
+}
+
+.box-search .btn-submit{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 56px;
+	border: 0;
+}
+
+.search-box .btn-submit .ico_submit{
+	background-position: -420px -24px;
+	
+}
+
+</style>
+<body>
+	<div id="body">
+		<div class="container-search">
+				<div class="inner-container">
+					<div class="box-search">
+						<!-- 상단 네이버시작페이지로 쥬니버 네이버 해피빈  -->
+						<div class="box-service">
+							<a href="https://help.naver.com/service/30016/contents/18042?osType=PC&lang=ko" class="link-start-page img1">네이버를 시작페이지로</a>
+
+							<i class="icon-bar"></i>
+
+							<a href="https://jr.naver.com/" class="link-jrnaver">
+								<i class="ico_jrnaver img1">
+								<span class="blind">쥬니버네이버</span>
+								</i>
+							</a>
+
+							<a href="https://www.happybean.naver.com" class="link_happybin">
+							<i class="ico_happybin img1">
+							</i>
+								<span class="blind">해피빈</span>
+							</a>
+						</div>
+						<!--  우측 상단 서비스 페이지 구현 완료  -->
+
+					<div class="search-box">
+						<input type="text" class="input-text">
+						<button type="submit" class="btn-submit">
+							<span class="blind">검색</span>
+							<span class="ico-submit img1"></span>
+						
+
+						</button>
+					</div>
+
+				</div>
+				</div>
+		</div>
+		<div class="container-menu"></div>
+		<div class="container-body"></div>
+		<footer class="footer-box"></footer>
+	</div>
+		
+</body>
+</html>
