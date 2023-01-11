@@ -9,9 +9,10 @@
 		.box{
 			width: 300px; height: 300px; background:red;
 			overflow: auto;
+			/* 퍼블리셔 브라우저별 호환성 체크  */
 			/* ie , edge, firefox */
 			-ms-overflow-style: none; /*ie, edge*/
-			-scrollbar-width: none;
+			-scrollbar-width: none; /* firefox*/
 		}
 		/* chrome, safari, opera */
 		.box::-webkit-scrollbar{

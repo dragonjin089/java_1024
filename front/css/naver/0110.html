@@ -370,7 +370,110 @@
 .box-body-left2 .news-controller .icon-set:hover{
 	opacity: 1;
 }
+.box-body-left2 .news-controller .icon-set [aria=selected=true] .icon-list{
+opacity: 1; background-position: -260px -310px; 
+}
+.box-body-left2 .news-controller .icon-set [aria=selected=true] .icon-title{
+opacity: 1; background-position: -276px -310px
+}
 
+/* newscontainer */
+.box-body-left2 .news-view-container{
+	position: relative;
+}
+
+/* .box-body-left2 .news-view-container .group-news-button{
+	display: none;
+	position: relative;
+	height: 260px;
+	border: 1px solid #dae1e6;
+	border-width: 1px 0;
+	letter-spacing: -.2px;
+	background-color: red;
+}
+.box-body-left2 .news-view-container .group-news-button .prev{
+	top: 109px; position: absolute; left: -27px; z-index: 10;
+}
+.box-body-left2 .news-view-container .group-news-button .prev .icon-prev.img1{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	background-position: -224px -158px;
+	vertical-align: top;
+}
+
+.box-body-left2 .news-view-container .group-news-button .prev{
+	top: 109px
+} */
+
+.box-body-left2 .title-view-container{
+	position: relative;
+	height: 260px;
+	border: 1px solid #dae1e6;
+	border-width: 0 1px;
+}
+.box-body-left2 .title-view-container .frame-area{
+	position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.box-body-left2 .title-view-container .frame-area .to-right1{
+	top: 65px;
+} 
+.box-body-left2 .title-view-container .frame-area .to-right2{
+	top: 130px;
+} 
+.box-body-left2 .title-view-container .frame-area .to-right3{
+	top : 195px
+}
+.box-body-left2 .title-view-container .frame-area .to-right1,
+.box-body-left2 .title-view-container .frame-area .to-right2,
+.box-body-left2 .title-view-container .frame-area .to-right3{
+	left: 0; right: 0; height: 1px;
+}
+.box-body-left2 .title-view-container .frame-area .to-bottom1{
+	left: 124px;
+}
+.box-body-left2 .title-view-container .frame-area .to-bottom2{
+	left: 248px
+}
+.box-body-left2 .title-view-container .frame-area .to-bottom3{
+	left: 372px;
+}
+.box-body-left2 .title-view-container .frame-area .to-bottom4{
+	left: 497px;
+}
+.box-body-left2 .title-view-container .frame-area .to-bottom5{
+	left: 622px;
+}
+
+.box-body-left2 .title-view-container .frame-area .to-bottom1,
+.box-body-left2 .title-view-container .frame-area .to-bottom2,
+.box-body-left2 .title-view-container .frame-area .to-bottom3,
+.box-body-left2 .title-view-container .frame-area .to-bottom4,
+.box-body-left2 .title-view-container .frame-area .to-bottom5{
+	top: 0; bottom: 0; width: 1px;
+}
+
+.box-body-left2 .title-view-container .frame-area .line{
+	position: absolute; background-color: #e4e8eb; z-index: 1;
+}
+.box-body-left2 .title-view-container .thumb-area .thumb-box{
+	position: relative;
+	float: left;
+	width: 16.66%;
+	height: 65px;
+}
+.box-body-left2 .title-view-container .thumb{
+	display: block;
+	padding: 23px 0 22px;
+	text-align: center;
+}
+.box-body-left2 .title-view-container .thumb img{
+	vertical-align: top;
+			overflow: clip;
+			overflow-clip-margin: content-box;
+			border: 0;
+}
 			/* 메인 오른쪽 첫번째 박스 */
 		.box-body-right1{
 			padding: 16px 16px 12px 17px; border: 1px solid #dae1e6;
@@ -425,6 +528,7 @@
 		
 
 		/* 공통 */
+		
 		.clearfix::after{
 			clear: both; display: block; content: '';
 		}
@@ -443,6 +547,7 @@
 		.box-body-left2 .box-live-news .link-media::after
 	,.icon-news.img1, .box-body-left2 .news-stand .link-newsstand::before
 	,.box-body-left2 .news-stand .link-newsstand::after, .icon-list.img1, .icon-title.img1, .icon-set.img1
+	,.icon-prev.img1, .icon-next.img1
 	{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
@@ -589,14 +694,12 @@
 								</div>
 							
 								<div class="box-stand-title">
-								
 									<a href="#" class="link-title-news"></a>
 									<ul class="list-issue">
 										<li class="item-issue">尹心? 여론? 중대 기로 나경원, '불출마 압박'에도 당권 도전하나</li>
 										<li class="item-issue">尹心? 여론? 중대 기로 나경원, '불출마 압박'에도 당권 도전하나</li>
 									</ul>
 								</div>
-
 								<div class="news-category">
 										<a href="https://news.naver.com" class="link-news">뉴스홈</a>
 										<a href="#" class="link-ct">연예</a>
@@ -604,7 +707,6 @@
 										<a href="3" class="link-ct">경제</a>
 									</div>
 							</div>
-						
 							<div class="news-stand">
 								<a href="http://newsstand.naver.com" class="link-newsstand">뉴스스탠드</a>
 							
@@ -613,12 +715,12 @@
 								<a href="#" class="all-news">전체언론사</a>
 							</div>
 							<div class="news-controller clearfix">
-								<a href="#" class="btnset">
+								<a href="#" class="btnset" aria-selected="true">
 									<i class="icon-list img1">
 										<span class="blind">리스트형</span>
 									</i>
 								</a>
-								<a href="#" class="btnset">
+								<a href="#" class="btnset" aria-selected="flase">
 									<i class="icon-title img1">
 										<span class="blind">썸네일형</span>
 									</i>
@@ -631,7 +733,56 @@
 							</div>
 							
 						
-					</div>
+							</div>
+							<div class="news-view-container">
+								<!-- <div class="group-news-button">
+									
+									<a href="#" class="prev">
+										<i class="icon-prev img1"><span class="blind">다음</span></i>
+									</a>
+
+									<a href="#" class="next">
+										<i class="icon-next img1"><span class="blind">이전</span></i>
+									</a>
+
+								</div> -->
+									<div class="title-view-container">
+										<div class="frame-area">
+											<i class="line to-right1"></i>
+											<i class="line to-right2"></i>
+											<i class="line to-right3"></i>
+											<i class="line to-bottom1"></i>
+											<i class="line to-bottom2"></i>
+											<i class="line to-bottom3"></i>
+											<i class="line to-bottom4"></i>
+											<i class="line to-bottom5"></i>
+										</div>
+									
+									<div class="thumb-area">
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/032.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/006.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/up/2022/0208/nsd16121208.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/139.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/044.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/020.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/031.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="https://s.pstatic.net/static/newsstand/2020/logo/light/0604/376.png" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+										<div class="thumb-box"><a href="#" class="thumb"><img src="" alt="" class="news-logo"></a></div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					
 					
