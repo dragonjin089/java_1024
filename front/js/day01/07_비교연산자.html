@@ -30,6 +30,16 @@
 		console.log(`'1' === 1 " ${'1' ===1}`);
 
 		console.log(`null == undefined : ${null == undefined}`);
+
+		// null vs 0 
+		console.log(`null > 0 : ${null > 0 }`); // null이 0으로 형변환
+		console.log(`null == 0 : ${null == 0}`); // null이 형변환 안됨 -> false 
+		console.log(`null >= 0 : ${null>=0}`);		// null이 0으로 형변환 
+		// undefined
+		console.log(`undefined > 0 : ${undefined > 0 }`); // undefined 가 nan으로 형변환
+		console.log(`undefined == 0 : ${undefined == 0}`); // undefined가  nan으로형변환  -> false 
+		console.log(`undefined >= 0 : ${undefined>=0}`);		// undefined가 nan으로 형변환 
+	// 전부다 false
 	</script>
 </body>
 </html>

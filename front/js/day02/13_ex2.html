@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		- 알림창으로 아이디, 비번을 입력받아 회원 객체를 생성하고 
+		회원 객체의 아이디, 비번으리 콘솔에 출력하는 코드를작성하세요.
+		
+		*/
+		
+
+		function User(id,pw){
+			this.id =id;
+			this.pw =pw;
+			this.print = function(){
+				console.log(`id : ${this.id}, pw : ${this.pw}`);
+			}
+		}
+		let id = prompt('아이디를입력하세요.')
+		let pw = prompt('비밀번호를입력하세요.')
+		let user = new User(id,pw);
+		user.print();
+		let user2 = { 
+			id,pw,
+			print(){
+				console.log(`id : ${this.id}, pw : ${this.pw}`);
+
+			}
+		}
+		user2.print();
+	</script>
+</body>
+</html>
