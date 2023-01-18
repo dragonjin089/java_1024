@@ -8,6 +8,13 @@
 </head>
 <body>
 	<script>
+		/*
+		호이스팅 : js 가 실행전, var로 된 변수나 함수들을 위로 글어 올리는 작업 
+		var x ; 
+		x = 10 ; 
+		console.log(x);
+
+		*/
 		x = 10;
 		var x;
 		console.log(x);
@@ -15,7 +22,28 @@
 		y = 10;
 		var y;
 		console.log(y);
+/*
+호이스팅에 ㅡ이해 
+		function test1() { console.log('h1');} 가 위로 올라오고 
+		test 1()이 실행됨 
 
+*/ 
+
+		test1();
+		function test1() { console.log('h1');}
+	
+		/*
+		var test ; 
+		test2() ; 
+		test 2 = function () { 
+			console.log('hello');)
+		*/
+		test2();
+		let test2 = function () { 
+			console.log('hello');
+		}
+	
+	
 	</script>
 </body>
 </html>

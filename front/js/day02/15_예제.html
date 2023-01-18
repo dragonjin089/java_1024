@@ -26,6 +26,23 @@
 		console.log(`id1 == id2 : ${id1 ==id2}`);
 		console.log(`obj3.id1 == obj4.id2 : ${obj3.id1 ==obj4.id2}`);
 		console.log(`obj3['id1'] == obj4['id2']': ${obj3['id1'] ==obj4['id2']}`);
+		
+		let id = Symbol('id'); 
+		let obj5 = {
+		
+		}
+		obj5[id] = 'abc';
+		for(key in obj5){
+			console.log(`obj5[${key}] = ${obj5[key]}`);
+		}
+		console.log(`obj5[id] = ${obj5[key]}`)
+		let obj6 = {
+			[id] : 'abc'
+		}
+		for(key in obj5){
+			console.log(`obj6[${key}] = ${obj5[key]}`);
+		}
+		console.log(`obj6[id] = ${obj6[key]}`)
 	</script>
 </body>
 </html>
