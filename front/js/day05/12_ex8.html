@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container-box">
+
+	<button name="pre"   onclick="button()"><</button>
+		<span id="now">1</span>
+		<span>/6</span>
+	<button name="next"  onclick="button()">></button>
+</div>
+
+<script>
+
+//버튼 클릭시 텍스 가져오고 변경
+function btn(){
+	let pre = document.querySelector('[name=pre]');
+	if(pre){
+		now = now.value
+		now = +now;
+	}
+	let next = document.querySelector('[name=next]');
+	{
+		if(next){
+			now = now.value
+			now = +now;
+			now = ++now;
+		}
+	}
+}
+</script>
+</body>
+</html>
