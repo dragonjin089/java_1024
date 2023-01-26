@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+			.bg-yellow{
+			background-color: yellow;
+		}
+		.list-menu{
+			border:3px solid black; list-style: none; padding: 0;
+		}
+		.list-menu::after{
+			content:''; clear: both; display: block;
+		}
+		.item-menu{
+			width: 20%; float: left; height: 50px;
+		}
+		.item-menu + .item-menu{
+			border-left: 3px solid black; margin-left: -3px;
+		}
+		.link-menu{
+			display: block; text-align: center; line-height: 50px; font-style: 20px;
+			text-decoration: none; color: black;
+		}
+		.pagination::after{
+			content: ''; clear: both; display: block;
+		}
+		.btn-prev, .btn-next{
+			width: 30px; height: 30px; border: 1px solid black; line-height: 30px;
+			text-align: center; text-decoration: none; color: black; float: left;
+		}
+		.move-box
+		{
+		float: left; line-height: 32px; margin: 0 10px;
+		width: 400px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-box">
+
+		<a href="#" class="btn-prev" onclick="movePage('prev');">&lt;</a>
+
+		<div class="move-box">
+		<ul class="list-menu" id="menu1">
+			<li class="item-menu">
+				<a href="" class="link-menu" id="">메뉴1</a>
+			</li>
+			<li class="item-menu">
+				<a href="" class="link-menu" id="">메뉴2</a>
+			</li>
+			<li class="item-menu">
+				<a href="" class="link-menu" id="">메뉴3</a>
+			</li>
+			<li class="item-menu">
+				<a href="" class="link-menu" id="">메뉴4</a>
+			</li>
+			<li class="item-menu">
+				<a href="" class="link-menu" id="">메뉴5</a>
+			</li>
+		</ul>
+	</div>
+
+		<a href="#" class="btn-next"onclick="movePage('next');" >&gt;</a>
+	</div>
+
+	<script>
+		function movePage(state){
+			let list1 = document.querySelectorAll('#menu>li');
+			list1.forEach
+			
+	}
+
+
+	
+let list = document.querySelectorAll('#menu2>li');
+let selectedItem;
+list.forEach((item)=> {
+	item.onclick = () => {
+		if(selectedItem)
+	}
+})
+	</script>
+</body>
+</html>

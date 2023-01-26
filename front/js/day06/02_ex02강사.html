@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+			.bg-yellow{
+			background-color: yellow;
+		}
+		.list-menu{
+			border:1px solid black; list-style: none; padding: 0 ; margin: 0 10px;
+		float: left; width : 500px; height : 48px;
+		}
+		.container{width:630; }
+		.container::after{
+			content:''; clear: both; display: block;
+		}
+		.btn-prev, .btn-next{
+			width: 48px; height: 48px; border: 1px solid black; line-height: 48px;
+			text-align: center; text-decoration: none; color: black; 
+			float: left;
+		}
+
+
+
+
+
+		.item-menu{
+			width: 100px; float: left; height: 48px;
+		}
+		.item-menu~ .item-menu{
+			border-left: 1px solid black; margin-left: -1px;
+		}
+		.link-menu{
+			display: block; text-align: center; line-height: 48px; font-style: 20px;
+			text-decoration: none; color: black;
+			height: 100%; width: 100%;
+		}
+		.item-menu.selected{
+			background: yellow;
+		}
+		
+	</style>
+</head>
+<body>
+	
+
+		
+		<div class="container">
+			<a href="#" class="btn-prev" onclick="moveItem('prev');">&lt;</a>
+			<ul class="list-menu">
+				<li class="item-menu selected" >
+					<a href="" class="link-menu" id="">엔터</a>
+				</li>
+				<li class="item-menu">
+					<a href="" class="link-menu" id="">스포츠</a>
+				</li>
+				<li class="item-menu">
+					<a href="" class="link-menu" id="">자동차</a>
+				</li>
+				<li class="item-menu">
+					<a href="" class="link-menu" id="">웹툰</a>
+				</li>
+				<li class="item-menu">
+					<a href="" class="link-menu" id="">경제</a>
+				</li>
+			</ul>
+		<a href="#" class="btn-next"onclick="moveItem('next');" >&gt;</a>
+	</div>
+
+<script>
+	let selectedItem =document.querySelector('.item-menu.selected');
+	function moveItem(state){
+		selectedItem.classList.remove('selected');
+		// 앞에요소가 없으면 null 리턴 실행안함
+		if(state == 'prev' && selectedItem.previousElementSibling)
+			selectedItem = selectedItem.previousElementSibling;
+		else if(state == 'next' &&selectedItem.nextElementSibling)
+		selectedItem = selectedItem.nextElementSibling;
+		
+		selectedItem.classList.add('selected');
+		}
+	
+</script>
+		
+</body>
+</html>
