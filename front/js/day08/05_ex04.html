@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<script src="../js/jquery.min.js"></script>
+<style>
+	
+	div{
+		border: 1px solid black; height: 100px; width: 100px; position: relative;
+	}
+</style>
+<body>
+	
+	 <div></div>
+	 <input type="checkbox" class="check1" name="fruit" value="바나나">바나나
+	 <script>
+		/*체크 박스 , 텍스트 박스를 배치하고 체크박스를 선택하면
+		바나나가 텍스트 박스에 추가되고 체크를 해제하면 
+		바나나 텍스트가 박스에서 삭제되도록 코드를 작성사에요
+		prop() : 표준 속성인 경우 사용하는걸 추천
+		attr() : 비 표준속성인 사용하는 걸추천 
+		*/
+		// $('.check1').click(function(){
+		// 	$('.check1').prop('checked',true)
+		// 	let val = $('.check1').val()
+		// 	$('div').text(val);
+
+
+		// });
+		$('[name=fruit').click(function(){
+			let text = '';
+			// 체크박스가 체크되면 바나나들어감
+			if($(this).prop('checked'))
+			text = $(this).val();
+			$(div).text(text);
+		});
+// $('check1').click(function(){
+
+// 	$('.check1').prop('checked',true)
+// 		let value = $('.check1').val()
+// 		$('div').val(value)
+	
+// })
+		
+		
+	 </script>
+</body>
+</html>
