@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.box{
+			width: 300px; height: 300px; border: 1px solid black;
+			padding: 50px;background: yellow;
+			margin-bottom: 30px;
+		}
+		.in-box{
+			background-color: red; padding: 20px; height: 100%;
+			box-sizing:border-box; color: #fff; font-size: 20px;
+		}
+		.text-box{
+		position: fixed; background-color: #fff; width: 50px;
+			height:30px ; line-height: 30px; text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="text-box">(0,0)</div>
+	<div class="box box1">
+		<div class="in-box">
+			in: <span class="in-num">0</span> <br>
+			out: <span class="out-num">0</span> <br>
+
+		</div>
+	</div>
+
+	
+	<div class="box box2">
+		<div class="in-box">
+			in: <span class="in-num">0</span> <br>
+			out: <span class="out-num">0</span> <br>
+		</div>
+	</div>
+	<script>
+		/*
+		-mouseover, mouseout 이벤트
+		-자식 요소로 이동하면 이벤트가 다시 발생 
+		-mouseenter, mouseleave 이벤트 
+		- 자식 요소로 이동해도 이벤트가 다시발생하지 않음 
+		-hover는mouseenter+mouseleave를 합친 이벤트
+		*/
+		let innum1 = 0;
+		let outnum1 = 0;
+		let innum2 = 0;
+		let outnum2 = 0;
+		$('.box1').mouseover(function(){
+			++innum1;
+			$(this).find('.in-num').text(innum1);
+		})
+
+		$('.box1').mouseout(function(){
+			++outnum1;
+			$(this).find('.out-num').text(outnum1);
+		})
+		$('.box2').mouseenter(function(){
+			++innum2;
+			$(this).find('.in-num').text(innum2);
+		})
+
+		$('.box2').mouseleave(function(){
+			++outnum2;
+			$(this).find('.out-num').text(outnum2);
+		})
+		// 박스기준으로 알려줌
+		/*
+		pageX,pageY : 화면 기준으로 위치(절대위치)
+		clientX,clientY : 요소기준으로 위치 (상대위치)][] 
+		*/
+		// $('.box').mousemove(function(e){
+		// 	$('.text-box').text(`(${e.pageX},${e.pageY})`);
+		// })
+		$('.box').mousemove(function(e){
+			$('.text-box').text(`(${e.pageX},${e.pageY})`);
+		})
+		
+	</script>
+</body>
+</html>

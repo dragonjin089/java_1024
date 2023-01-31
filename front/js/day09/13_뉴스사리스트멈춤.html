@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		*{padding : 0; margin: 0;}
+		a{text-decoration: none;}
+		ul{
+			list-style: none;
+		}
+		.container{
+			height: 50px; margin-top: 30px; border: 3px solid black;
+			width: 300px; overflow: hidden; position: relative;
+		}
+		.list-news{
+			width:500%;
+		}
+		.item-news{
+			height: 50px; line-height: 50px; padding-left: 20px;
+			background-color: yellow;
+			
+			float: left;
+			width: 20%; box-sizing: border-box;
+		}
+		.list-news::after{
+			content: ''; display: block; clear: both;
+		}
+		
+	.btnbox{
+		position: absolute; top:-1px; right:-1px; bottom: -1px; background-color: #fff;
+	}
+	.btnbox::after{
+		content: ''; display: block; clear: both;
+	}
+	.btn-prev, .btn-next{
+		border: 1px solid black ; float: left; font-size: 30px; line-height: 50px;
+	}
+	.btn-next{
+		margin-left: -1px;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="btnbox"></div>
+		<button class="btn-prev "><</button>
+		<button class="btn-next">></button>
+	<ul class="list-news">
+		
+	<li class="item-news"><a href="#" class="link-news">1211</a></li>
+	<li class="item-news"><a href="#" class="link-news">23232</a></li>
+	<li class="item-news"><a href="#" class="link-news">343434</a></li>
+	<li class="item-news"><a href="#" class="link-news">5445454</a></li>
+	<li class="item-news"><a href="#" class="link-news">343434</a></li>
+</ul>
+
+</div>
+
+	<script>
+	
+
+		let id = rolling();
+	// hover 이벤트 등록
+	// 마우스가 요소 안으로 들어오면
+	//애니메이션이 진행중인 setinterval를 해제 => clearInterval 
+	// 마우스가 요소를 빠져나가면
+	// setinterval를 통해 애니메이션이 진행되도록 작업
+	
+	
+	// $('.container').hover(function(){
+		
+	// 		clearInterval(id)
+	// 	},function(){
+	// 		id = rolling();
+	// 	});
+
+// function rolling(){
+// 	return setInterval(function(){
+// 			if(!$('.item-news').first().is(':animated')){
+// 			let width = $('.item-news').innerWidth();
+// 			$('.item-news').first().animate({
+// 				marginLeft : `-${width}px`
+// 		},1200,function(){
+// 			$(this).detach().appendTo('.list-news').removeAttr('style')
+// 		});
+// 			}
+// 		}, 2000);
+// }
+
+$('.btn-next').click(function(){
+	if(!$('.item-news')).first().is(':animated')){
+	let width = $('.item-news').innerWidth();
+	$('.item-news').first().animate({
+		marginLeft : `-${width}px`
+	},1000,function(){
+		$(this).detach().appendTo('.list-news').removeAttr('style');
+	})
+}
+});
+
+
+	</script>
+</body>
+</html>
