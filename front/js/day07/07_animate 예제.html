@@ -39,17 +39,15 @@ $('.btn').click(()=>{
       'margin-left' : 0
     }, 1000);
   });
-});
-
-let cssBefore = {};
-let cssAfter = {};
 
 
-  $('.box1').animate(cssAfter,1000,function(){
-    $(this).animate(cssBefore,1000);
-  });
-});
+let cssBefore = {	marginLeft : 0};
+let cssAfter = {marginLeft : '100px'};
 
+$('.box').animate(cssAfter, 1000, function(){
+				$(this).animate(cssBefore,1000);
+			});
+		});
 
     // let a = []//배열 
     // let b = {

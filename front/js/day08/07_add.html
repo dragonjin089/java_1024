@@ -8,17 +8,17 @@
     <script src="../js/jquery.min.js"></script>
     <style>
         .box{
-            padding: 30px; margin-bottom: 30px; border: 1px solid black;
-            background-color: yellow;
-        }
+			padding: 30px; margin: 30px 0; border: 1px solid black;
+			background-color: yellow;
+		}
         .child-box{
-            padding: 30px; margin: 30px 0; border: 1px solid black; background-color: gray;
-
-        }
+			padding: 30px; margin: 30px 0; border: 1px solid black; background-color: gray;
+		}
     </style>
 </head>
 <body>
     <button class="btn btn-append">append</button>
+    
     <button class="btn btn-apeendTo">append To</button>
     <button class="btn btn-prepend">prepend</button>
     <button class="btn btn-prependTo">prependTo</button>
@@ -48,13 +48,20 @@ A.remove()
 A.empty()
 -A요소의 자손 요소들을 삭제(A요소는 남음)
 */
-let appendCount=1;
+
+
+let appendCount = 1;
 $('.btn-append').click(function(){
-    $('.base-box').append(`<div class="child-box">append${appendCount++}</div>`)
-});
+		$('.base-box').append(`<div class="child-box">append${appendCount++}</div>`);
+	});
 $('.btn-appendTo').click(function(){
-    $(`<div class="child-box">append${appendCount++}</div>`).appendTo('.base-box');
+		$(`<div class="child-box">append${appendCount++}</div>`).appendTo('.base-box');
 });
+
+
+
+
+
 let prependCount =1;
 $('.btn-prepend').click(function(){
     $().appendTo('.base-box');$(`<div class="child-box">prepend${prependCount++}</div>`)
