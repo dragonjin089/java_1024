@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<script src="../js/jquery.min.js"></script>
+<style>
+.form{
+  width: 500px; margin: 0 auto;
+}
+.title{
+  text-align: center;
+}
+[name=id],[name=pw],[name=pw2]{
+  margin-bottom: 20px; border-radius: 10px;
+  display: block; width: 100%; height: 40px;
+  border: 1px solid black; line-height: 40px;
+  padding-left: 0 10px; box-sizing: border-box;
+}
+.btn-submit{
+  width: 100%; margin-top: 20px; height: 40px;
+  border-radius: 10px; border: 1px solid black;
+  cursor: pointer; display: block;
+}
+</style>
+</head>
+
+<body>
+
+  <form class="form" method="get" class="form">
+
+    <h1>회원가입</h1>
+
+   id :  <input type="text" name="id" placeholder="id"> 
+   pw : <input type="password" name="pw" placeholder="pw">
+   pw2 : <input type="password" name="pw2" placeholder="pw2">
+   <div>
+   <label >
+   <input type="radio" name="gender" class="gender">남성 
+  </label>
+  <label >
+
+    <input type="radio" name="gender" class="gender">여성
+
+  </label>
+  
+  </div>
+  
+   <button type="submit" class="btn-submit">회원가입</button>
+
+
+  </form>
+  
+
+  <script>
+    /*
+    아이디는 필수 항목 
+    비번은 필수 항목
+    비번확인은 비번과 동일
+    성별은 필수 항목 
+    */
+
+  
+    $('.form').submit(function(){
+      let id = $('[name=id').val();
+      if(id.length ==0){
+        alert('아이디는 필수항목입니다.');
+        $('[name=id]').focus();
+        return false;
+      }
+      let pw = $('[name=pw').val();
+      if(pw.length ==0){
+        alert('pw는 필수항목입니다.');
+        $('[name=pw]').focus();
+        return false;
+      }let pw2 = $('[name=pw2').val();
+      if(pw != pw2){
+        alert('비번과 비번확인이 일치하지 않음');
+        $('[name=pw]').focus();
+        return false;
+      }
+  
+      if($('[name=gender]:checked').length == 0){
+        alert('성별은 필수 항목입니다.');
+        $('[name =gender]').focus();
+        return false;
+      }
+    })
+
+  
+  </script>
+</body>
+</html>

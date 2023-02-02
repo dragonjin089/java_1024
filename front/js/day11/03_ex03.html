@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <style>
+    
+   .btn{
+    width : 50px; border : none; background-color: #fff; position: absolute;
+   
+    position: absolute; top: 0; right: 0;
+    line-height: 50px; padding:0; outline: 0;
+    cursor: pointer; font-size : 30px; color : red;
+  }
+   .menu-box{
+    position: fixed; right: -202px; top: 0;bottom: 0;
+    width: 200px; background-color: white;
+    box-shadow: 0 3px 5px 1px rgba(0,0,0,0.3);
+    
+  }
+  .btn-close{
+    position: absolute; top: 0; right: 0;
+    width: 50px; height: 50px; font-size: 40px;
+    outline: 0; background-color: white; border: 0;
+    cursor: pointer;
+  }
+  nav{
+    border:1px solid black;  position: relative;
+  }
+  </style>
+</head>
+<body>
+  <nav>
+    <button class="btn"><i class="fa-solid fa-bars"></i></button> 
+  </nav>
+  <div class="menu-box" >
+    <button class="btn-close"><i class="fa-solid fa-bars"></i></button>
+  </div>
+
+<script>
+
+$('.btn').click(function(){
+  $('.menu-box').animate({
+  right : 0
+  },500)
+});
+ $('.btn-close').click(function(){
+  $('.menu-box').animate({
+    right:'-202px'
+
+  },500)
+ })
+
+
+</script>
+</body>
+
+</html>
