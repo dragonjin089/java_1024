@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/jquery.min.js"></script>
+<style>
+form{
+  width: 500px;
+  
+}
+span{
+margin-right: 50px;
+}
+.btn-box{
+text-align: center;
+}
+#pw{
+margin-left: -14px;
+}
+#pw2{
+margin-left: -46px;
+}
+#regionid{
+margin-left: 13px;
+}
+</style>
+</head>
+<body>
+  <form class="form">
+    <fieldset>
+      <legend>회원가입 양식</legend>
+      
+        <span>아이디</span>
+        <input type="text" id="id" name="id">
+        <button type="button" class="checkid">중복확인</button><br>
+      <span>비밀번호</span>
+     <input type="password" id="pw"><br>
+     <span>비밀번호 확인</span> 
+     <input type="password" id="pw2"><br>
+     <div class="region">
+        <span>지역</span>
+        <input type="radio" name="region-group" id="regionid"> 서울
+        <input type="radio" name="region-group"> 부산
+        <input type="radio" name="region-group"> 대구
+         </div>
+         <div class="btn-box">
+          <input type="reset"> 
+          <button type="submit" >회원가입</button>
+         </div>
+    </fieldset>
+  </form>
+  <script>
+
+
+$('.form').submit(function(){
+  
+
+  if($('[name=region-group]:checked').length == 0){
+        alert('지역은 필수 항목입니다.');
+        $('[name =regeion-group]').focus();
+        return false;
+      }
+})
+$('.checkid').click(function(){
+  let id = $('[name=id]').val();
+  let idRegex = /^[a-z]{1}[a-z,A-Z,0-9!@#]{5,11}/;
+  if(!idRegex.test(id)){
+    $('#id').css("background-color","red");
+  }
+  else {
+    $('#id').css("background-color","green");
+  }
+})
+  </script>
+</body>
+</html>
