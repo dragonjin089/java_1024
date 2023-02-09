@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/jquery.min.js"></script>
+  <style>
+    .box{
+      height: 100px; border: 2px solid black;
+      width: 150px;  display: inline-block;
+      margin : 20px;
+    }
+    .container{ 
+      height: 300px; border: 2px solid black; 
+      width: 600px;
+    }
+    .modal{
+      top: 10%; left: 10%; opacity: 0.7; position: fixed;
+      border: 1px solid red; height: 200px; width: 400px;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="modal" hidden>
+      <button class="btn-exit">x</button>
+    </div>
+  </div>
+  
+  <script>
+    
+     $('.box').click(function(){
+       $('body').css('background','gray')
+       $('.modal').fadeIn(300);
+     })
+    $('.btn-exit').click(function(){
+
+      $('.modal').fadeOut(300);
+      $('body').removeAttr('style')
+    })
+  </script>
+</body>
+</html>

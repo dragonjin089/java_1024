@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/jquery.min.js"></script>
+  <style>
+    *{
+        text-align: center;
+
+    }
+  </style>
+</head>
+<body>
+  <form action="" get></form>
+  <fieldset>
+    <legend>회원가입</legend>
+    <input type="text" placeholder="아이디" name="id"><br><br>
+    <button class="checkid">중복확인</button>
+    <br><br><br>
+    <button type="submit" class="recruit">회원가입</button>
+  </fieldset>
+<script>
+
+$('.checkid').click(function(){
+  let id = $('[name=id]').val();
+  let idRegex = /^[a-z,A-Z,0-9!@#]{5,8}$/;
+  if(!idRegex.test(id)){
+    alert('불통');
+    return false;
+  }
+  alert('통과');
+  return true;
+})
+
+$('.recruit').submit(function(){
+    alert('가입완료')
+})
+
+
+</script>
+</body>
+
+</html>

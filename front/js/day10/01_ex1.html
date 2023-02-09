@@ -76,37 +76,14 @@
 				});
 			}
 		});
-        // 이전 버튼 클릭 이벤트를 등록
-         //요소를 때서 붙인 후 애니메이션을 실행
-         // -> 마지막 요소를 떼서 앞에 붙이고, margin-left를 지정
-         //last(), prependTo(), css()
+        /*
+        이전 버튼 클릭 이벤트를 등록
+            //요소를 때서 붙인 후 애니메이션을 실행
+            // 마지막 요소를 떼서 앞에 붙이고 , margin left 를 지정
+            //last(), prependTo(), css()
 
-         $('.btn-prev').click(function(){
-            let width = $('.item-news').first().innerWidth();
-            if(!$('.item-news').first().is('animated')){
-            
-                    $('.item-news').last().detach().prependTo('.list-news')
-                    .css('marginLeft',`-${width}px`).animate({
-                        marginLeft : 0
-                    },1000)            
-                    
-                
-            }
-         })
-
-         
-         
-         //  $('.btn-prev').click(function(){
-            //     $('.item-news').last().datach().prependTo('.list-news')
-         
-        // },function(){
-        //     let width = $('.item-news').first().innerWidth();
-        //     if(!$('.item-news').first().is('animated')){
-        //         $('item-news').first().animate({
-        //             marginLeft: `+${width}`
-        //         })
-        //     }
-        // })
+            $
+        */
 	</script>
 </body>
 </html>
