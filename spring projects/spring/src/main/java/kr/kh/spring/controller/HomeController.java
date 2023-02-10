@@ -2,24 +2,30 @@ package kr.kh.spring.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.kh.spring.service.MemberService;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 * @return 
 	 */
+	@Autowired
+
+	MemberService memberService;
+	
 	@RequestMapping(value = "/")
 	public ModelAndView home(ModelAndView mv) {
 		mv.setViewName("/main/home");
@@ -65,6 +71,16 @@ public class HomeController {
 		mv.addObject("age","10000");
 		
 		mv.setViewName("/main/ex4");
+		return mv;
+	}
+	@RequestMapping(value = "/ex5")
+	public ModelAndView ex5(ModelAndView mv, String num) {
+		//db-> 학번 가져오기 
+		String name = memberService.getNameByNum(num);
+		mv.addObject("name",name);
+		mv.addObject("num",num);
+		
+		mv.setViewName("/main/ex5");
 		return mv;
 	}
 }
