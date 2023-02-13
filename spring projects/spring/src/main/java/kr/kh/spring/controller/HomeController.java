@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.spring.service.MemberService;
+import kr.kh.spring.vo.MemberVO;
 
 /**
  * Handles requests for the application home page.
@@ -31,6 +32,34 @@ public class HomeController {
 		mv.setViewName("/main/home");
 		return mv;
 	}
+	
+
+	@RequestMapping(value = "/signup", method=RequestMethod.GET)
+	public ModelAndView signup(ModelAndView mv) {
+		mv.setViewName("/member/signup");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/signup", method=RequestMethod.POST)
+	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
+//		회원가입 성공여
+		boolean isSignup = memberService.signup(member);
+		//아이디가 주어지면 주어진 아이디의 인증번호를 발급하고 
+		//발급한 인증번호를db에 저장하고 이메일로 인증 번호가 있는 링크를 전송하는 기능 
+		if(isSignup) {
+			memberService.emailAuthentication(member.getMe_id());
+			mv.setViewName("redirect:/");
+			
+		}else {
+			
+			mv.setViewName("redirect:/signup");
+//		끝난다음에 전달하는데redirect
+			
+		}
+		
+		return mv;
+	}
+	
 	@RequestMapping(value = "/ex1")
 	public ModelAndView ex1(ModelAndView mv,String name, Integer age) {
 		System.out.println("예제 1 = 화면에서 서버로 전달한이름  " +name);
@@ -73,14 +102,6 @@ public class HomeController {
 		mv.setViewName("/main/ex4");
 		return mv;
 	}
-	@RequestMapping(value = "/ex5")
-	public ModelAndView ex5(ModelAndView mv, String num) {
-		//db-> 학번 가져오기 
-		String name = memberService.getNameByNum(num);
-		mv.addObject("name",name);
-		mv.addObject("num",num);
-		
-		mv.setViewName("/main/ex5");
-		return mv;
-	}
+
+	
 }
