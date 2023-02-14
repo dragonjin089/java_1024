@@ -33,7 +33,6 @@ public class HomeController {
 		mv.setViewName("/main/home");
 		return mv;
 	}
-	
 
 	@RequestMapping(value = "/signup", method=RequestMethod.GET)
 	public ModelAndView signup(ModelAndView mv) {
@@ -51,20 +50,16 @@ public class HomeController {
 		if(isSignup) {
 			memberService.emailAuthentication(member.getMe_id(),member.getMe_email());
 			mv.setViewName("redirect:/");
-			
+	
 		}else {
 			mv.setViewName("redirect:/signup");
-//		끝난다음에 전달하는데redirect
-			
-		}
-		
+//		끝난다음에 전달하는데redirect	
+		}	
 		return mv;
 	}
-	
 	@RequestMapping(value = "/email", method=RequestMethod.GET)
 	public ModelAndView email(ModelAndView mv,MemberOKVO mok) {
 		if(memberService.emailAuthenticationConfirm(mok)) {
-			
 		}else {
 			
 		}
@@ -72,7 +67,23 @@ public class HomeController {
 		return mv;
 	}
 	
-	
+	@RequestMapping(value = "/login", method=RequestMethod.GET)
+	public ModelAndView login(ModelAndView mv) {
+		mv.setViewName("/member/login");
+		return mv;
+	}
+	@RequestMapping(value = "/login", method=RequestMethod.POST)
+	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
+		MemberVO user = memberService.login(member);
+		mv.addObject("user",user);
+		if(user != null)
+			mv.setViewName("redirect:/");
+		else 
+			mv.setViewName("redirect:/login");
+		
+		System.out.println(user);
+		return mv;
+	}
 	
 	@RequestMapping(value = "/ex1")
 	public ModelAndView ex1(ModelAndView mv,String name, Integer age) {

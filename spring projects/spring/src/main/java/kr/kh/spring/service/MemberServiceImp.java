@@ -5,6 +5,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import kr.kh.spring.dao.MemberDAO;
@@ -18,11 +19,16 @@ public class MemberServiceImp implements MemberService {
 	MemberDAO memberDao;
 	@Autowired
 	private JavaMailSender mailSender;
-
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
+	
+	
 	@Override
 	public boolean signup(MemberVO member) {
 		if(member == null)
 		return false;
+		String newPw = passwordEncoder.encode(member.getMe_pw());
+		member.setMe_pw(newPw);
 		if(memberDao.insertMember(member)!=0)
 			return true;
 		return false;
@@ -98,5 +104,19 @@ public class MemberServiceImp implements MemberService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public MemberVO login(MemberVO member) {
+		if(member == null || member.getMe_id() == null || member.getMe_pw() == null)
+		return null;
+		
+		MemberVO dbMember = memberDao.selectMemberById(member.getMe_id());
+		if(dbMember == null) 
+			return null;
+		//암호화가 되있기때문에 수정해야함 
+		if(passwordEncoder.matches(member.getMe_pw(), dbMember.getMe_pw()))
+			return dbMember;
+		return null;
 	}
 	}
