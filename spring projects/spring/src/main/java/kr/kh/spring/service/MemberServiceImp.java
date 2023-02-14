@@ -89,6 +89,7 @@ public class MemberServiceImp implements MemberService {
 			return false;
 //		삭제
 		MemberOKVO dbMok = memberDao.selectMemberOK(mok);
+		System.out.println("db에서 가져온 인증 정보 : "+dbMok);
 		if(dbMok != null) {
 //			member_ok 테이블에서 해당 데이터를 삭제하고
 			memberDao.deleteMemberOK(mok);
