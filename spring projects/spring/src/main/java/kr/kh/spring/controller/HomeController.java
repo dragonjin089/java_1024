@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.spring.service.MemberService;
+import kr.kh.spring.vo.MemberOKVO;
 import kr.kh.spring.vo.MemberVO;
 
 /**
@@ -44,14 +45,14 @@ public class HomeController {
 	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
 //		회원가입 성공여
 		boolean isSignup = memberService.signup(member);
+		System.out.println(member);
 		//아이디가 주어지면 주어진 아이디의 인증번호를 발급하고 
 		//발급한 인증번호를db에 저장하고 이메일로 인증 번호가 있는 링크를 전송하는 기능 
 		if(isSignup) {
-			memberService.emailAuthentication(member.getMe_id());
+			memberService.emailAuthentication(member.getMe_id(),member.getMe_email());
 			mv.setViewName("redirect:/");
 			
 		}else {
-			
 			mv.setViewName("redirect:/signup");
 //		끝난다음에 전달하는데redirect
 			
@@ -59,6 +60,19 @@ public class HomeController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(value = "/email", method=RequestMethod.GET)
+	public ModelAndView email(ModelAndView mv,MemberOKVO mok) {
+		if(memberService.emailAuthenticationConfirm(mok)) {
+			
+		}else {
+			
+		}
+		mv.setViewName("redirect:/");
+		return mv;
+	}
+	
+	
 	
 	@RequestMapping(value = "/ex1")
 	public ModelAndView ex1(ModelAndView mv,String name, Integer age) {

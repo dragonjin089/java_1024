@@ -15,7 +15,7 @@ public class MemberVO {
 	Date me_join_time;
 	
 	public void setMe_birthday(String str) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			me_birthday = format.parse(str);
 		} catch (ParseException e) {
