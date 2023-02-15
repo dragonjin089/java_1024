@@ -1,5 +1,7 @@
 package kr.kh.spring.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +83,13 @@ public class HomeController {
 		else 
 			mv.setViewName("redirect:/login");
 		
+		return mv;
+	}
+	@RequestMapping(value = "/logout", method=RequestMethod.GET)
+	public ModelAndView logout(ModelAndView mv, HttpSession session) {
+		//세션에 있는 회원정보를 삭제 
+		session.removeAttribute("user");
+		mv.setViewName("redirect:/");
 		return mv;
 	}
 	
