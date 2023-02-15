@@ -1,5 +1,9 @@
 package kr.kh.spring.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -86,7 +90,16 @@ public class HomeController {
 		return mv;
 	}
 	@RequestMapping(value = "/logout", method=RequestMethod.GET)
-	public ModelAndView logout(ModelAndView mv, HttpSession session) {
+	public ModelAndView logout(ModelAndView mv, HttpSession session, HttpServletResponse reponse) throws IOException {
+		
+		// 다형성 이용
+		MemberVO user = (MemberVO)session.getAttribute("user");
+		if(user != null) {
+			reponse.setContentType("text/html; charset=UTF-8");
+			PrintWriter out =reponse.getWriter();
+			out.println("<script>alert('로그아웃');location.href='/spring/'</script>");
+			out.flush();
+		}
 		//세션에 있는 회원정보를 삭제 
 		session.removeAttribute("user");
 		mv.setViewName("redirect:/");
