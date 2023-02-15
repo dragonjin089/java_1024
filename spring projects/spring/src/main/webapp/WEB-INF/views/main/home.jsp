@@ -9,3 +9,4 @@
 	<a href="/spring/ex4">데이터 전송 예제4</a> <br>
 	<a href="/spring/ex5?num=2022123001">DB 연결 예제 5</a> <br>
 </div>
+${user}
