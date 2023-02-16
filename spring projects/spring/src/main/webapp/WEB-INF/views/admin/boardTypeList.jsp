@@ -76,9 +76,8 @@
     			<td><button class="btn btn-outline-success">등록</button></td>
     		</tr>
     		</form>
-    </tfoot>
-  </table>
-  
+    	</tfoot>
+  		</table>
 	</div>
 	<%-- <!-- c:foreach 를 이용한 부터 10까지 출력 에  -->
 	<c:forEach begin="1" end="10" step="1" var="i">
