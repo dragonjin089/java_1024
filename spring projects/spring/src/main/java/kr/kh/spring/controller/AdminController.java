@@ -3,8 +3,10 @@ package kr.kh.spring.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.spring.dao.BoardDAO;
@@ -25,6 +27,15 @@ public class AdminController {
 		ArrayList<BoardTypeVO> list = adminService.getBoardType();
 		mv.addObject("list",list);
 		mv.setViewName("/admin/boardTypeList");
+		return mv;
+	}
+	
+	@RequestMapping(value="/admin/board/type/insert", method=RequestMethod.POST)
+	public ModelAndView boardTypeInsert(ModelAndView mv, BoardTypeVO bt) {
+		System.out.println(bt);
+		//admin 서비스에게 모든 게시글 타입을 가져올라고 요청 
+		
+		mv.setViewName("redirect:/admin/board/type/list");
 		return mv;
 	}
 }
