@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
     <h1>로그인</h1>
     
-    <form action="<c:url value='member/login'></c:url>" method="post">
+    <form action="<c:url value='/login'></c:url>" method="post">
     	<div class="form-group">
   		<label for="id">아이디:</label>
   	<input type="text" class="form-control" id="id" name="me_id">
@@ -16,3 +16,7 @@
 	<button class="btn btn-outline-success col-12">로그인</button>
  	
     </form>
+    <script>
+    /*아이디 포커  */
+    $('#id').focus();
+    </script>
