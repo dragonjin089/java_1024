@@ -1,5 +1,5 @@
 package kr.kh.test.dao;
 
-public interface AdminDAO {
+public interface BoardDAO {
 
 }
