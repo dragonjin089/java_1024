@@ -7,11 +7,11 @@
 		<thead>
 			<tr>
 				<th>번호</th>
-				<th>타입</th>
-				<th>게시글명</th>
-				<th>읽기 권한</th>
-				<th>쓰기 권한</th>
-				<th>비고</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>추천/비추천</th>
+				<th>작성일</th>
+				<th>조회</th>
 			</tr>
 		</thead>
 		<tbody>

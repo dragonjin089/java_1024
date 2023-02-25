@@ -18,4 +18,6 @@ public interface BoardDAO {
 	boolean deleteBoardType(@Param("bt_num")int bt_num);
 
 	void insertBoard(@Param("bo")BoardVO board);
+
+	ArrayList<BoardVO> selectBoardList();
 }

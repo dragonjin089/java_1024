@@ -12,4 +12,7 @@ public interface BoardService {
 
 	boolean insertBoard(BoardVO board, MemberVO user);
 
+	ArrayList<BoardVO> getBoardList();
+
 }
+	

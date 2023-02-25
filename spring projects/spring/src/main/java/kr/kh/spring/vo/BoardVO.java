@@ -1,6 +1,9 @@
 package kr.kh.spring.vo;
 
+
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -9,6 +12,7 @@ public class BoardVO {
 	int bo_num;
 	String bo_title;
 	String bo_content;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date bo_register_date;
 	Date bo_update_date;
 	int bo_views;
@@ -17,4 +21,6 @@ public class BoardVO {
 	int bo_ori_num;
 	String bo_me_id;
 	int bo_bt_num;
+	
+
 }
